@@ -35,7 +35,11 @@ ul {
 }
 
 img {
-  width: 100%;
+  min-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+  border-style: none;
 }
 
 a {
@@ -47,19 +51,13 @@ a {
 
 a:hover {
   @include pc01($point-pc01) {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
 a:focus,
 *:focus {
   outline: none;
-}
-
-img {
-  vertical-align: top;
-  border: none;
-  border-style: none;
 }
 
 body {
@@ -117,12 +115,6 @@ select::-ms-expand {
   display: none;
 }
 
-//フッター下固定
-html,
-body {
-  height: 100%;
-}
-
 .l-container {
   width: 100%;
   position: relative;
@@ -130,7 +122,3 @@ body {
   min-height: 100%;
 }
 
-#contents {
-//   padding-bottom: 40px;
-  /*フッターの高さと同じ*/
-}
