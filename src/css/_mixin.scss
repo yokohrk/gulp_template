@@ -39,6 +39,105 @@ $point-pc02: 1280px;
   }
 }
 
+
+// @include txt-XXS;
+@mixin txt-XXS {
+    @include sp($point-sp) {
+        font-size: 8px;
+    }
+    @include tb($point-tb) {
+        font-size: 10px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 12px;
+    }
+}
+// @include txt-XS;
+@mixin txt-XS {
+    @include sp($point-sp) {
+        font-size: 10px;
+    }
+    @include tb($point-tb) {
+        font-size: 12px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 14px;
+    }
+}
+// @include txt-S;
+@mixin txt-S {
+    @include sp($point-sp) {
+        font-size: 12px;
+    }
+    @include tb($point-tb) {
+        font-size: 14px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 16px;
+    }
+}
+// @include txt-M2;
+@mixin txt-M2 {
+    @include sp($point-sp) {
+        font-size: 14px;
+    }
+    @include tb($point-tb) {
+        font-size: 16px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 20px;
+    }
+}
+// @include txt-M3;
+@mixin txt-M3 {
+    @include sp($point-sp) {
+        font-size: 13px;
+    }
+    @include tb($point-tb) {
+        font-size: 15px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 18px;
+    }
+}
+// @include txt-M;
+@mixin txt-M {
+    @include sp($point-sp) {
+        font-size: 16px;
+    }
+    @include tb($point-tb) {
+        font-size: 20px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 24px;
+    }
+}
+// @include txt-L;
+@mixin txt-L {
+    @include sp($point-sp) {
+        font-size: 18px;
+    }
+    @include tb($point-tb) {
+        font-size: 22px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 27px;
+    }
+}
+// @include txt-XL;
+@mixin txt-XL {
+    @include sp($point-sp) {
+        font-size: 24px;
+    }
+    @include tb($point-tb) {
+        font-size: 28px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 32px;
+    }
+}
+
+
 //@extend .clearfix;
 .clearfix {
   &:after {
@@ -47,6 +146,7 @@ $point-pc02: 1280px;
     clear: both;
   }
 }
+
 
 // @include ov;
 @mixin ov {
@@ -80,6 +180,7 @@ $point-pc02: 1280px;
   }
 }
 
+
 //@include kadomaru(6px);
 @mixin kadomaru($radius) {
   -moz-border-radius: $radius;
@@ -87,6 +188,7 @@ $point-pc02: 1280px;
   border-radius: $radius;
   -ms-border-radius: $radius;
 }
+
 
 //@include font-googleEN;
 @mixin font-googleEN {
@@ -98,25 +200,27 @@ $point-pc02: 1280px;
   font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
 }
 
-//@include PCsiteWidth;
-@mixin PCsiteWidth {
-  margin: 0 auto;
-  width: 1048px;
-  @include sp($point-sp) {
-    width: 100%;
-  }
-}
 
-//@include boxSizing;
-@mixin boxSizing {
-  box-sizing: border-box;
+//@include inner-boxS;
+@mixin inner-boxS {
+    @include pc01($point-pc01) {
+        max-width: 960px;
+        margin: 0 auto;
+    }
 }
-
-//SP ★
-//@include SPsiteWidth;
-@mixin SPsiteWidth {
-  @include boxSizing;
-  width: 100%;
+//@include inner-boxM;
+@mixin inner-boxM {
+    @include pc01($point-pc01) {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+}
+//@include inner-boxL;
+@mixin inner-boxL {
+    @include pc01($point-pc01) {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
 
 
