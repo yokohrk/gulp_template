@@ -9,23 +9,29 @@
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 
-<!-- *** Facebook *** ★忘れずに指定 -->
 <meta property="og:site_name" content="">
-<meta property="og:description" content="">
+<meta property="og:title" content="">
+<meta property="og:type" content="">
+<meta property="og:image" content="">
 <meta property="og:url" content="">
-<meta property="og:type" content="website">
-<meta property="og:image" content="http:///img/ogp.png">
+<meta property="og:description" content="">
 <meta property="og:locale" content="ja_JP">
 
-<!-- *** Twitter *** ★忘れずに指定 -->
+<meta property="fb:app_id" content="695458524164281">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="">
-<meta name="twitter:creator" content="">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="http:///img/common/ogp.png">
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" media="all">
+<link rel="shortcut icon" href="/img/common/favicon.ico">
+
+<!-- CSSを非同期ロードさせたい時に使ってください。
+<link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"></noscript>
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(a){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){function e(){t.addEventListener?t.removeEventListener("load",e):t.attachEvent&&t.detachEvent("onload",e),t.setAttribute("onload",null),t.media=a}var a=t.media||"all";t.addEventListener?t.addEventListener("load",e):t.attachEvent&&t.attachEvent("onload",e),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(e,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+-->
 </head>
 
 <body>
@@ -44,54 +50,29 @@
 <div class="l-contents">
 <main class="l-main">
 <section>
-	<div class="row"><div class="name">linear: </div><div class="box linear"></div></div>
-	<div class="row"><div class="name">ease: </div><div class="box ease"></div></div>
-	<div class="row"><div class="name">ease-in: </div><div class="box ease-in"></div></div>
-	<div class="row"><div class="name">ease-in-out: </div><div class="box ease-in-out"></div></div>
 	
-	<div class="row"><div class="name">easeInQuad: </div><div class="box easeInQuad"></div></div>
-	<div class="row"><div class="name">easeInQuad: </div><div class="box easeInCubic"></div></div>
-	<div class="row"><div class="name">easeInQuart: </div><div class="box easeInQuart"></div></div>
-	<div class="row"><div class="name">easeInQuint: </div><div class="box easeInQuint"></div></div>
-	<div class="row"><div class="name">easeInSine: </div><div class="box easeInSine"></div></div>
-	<div class="row"><div class="name">easeInExpo: </div><div class="box easeInExpo"></div></div>
-	<div class="row"><div class="name">easeInCirc: </div><div class="box easeInCirc"></div></div>
-	<div class="row"><div class="name">easeInBack: </div><div class="box easeInBack"></div></div>
-	
-	<div class="row"><div class="name">easeOutQuad: </div><div class="box easeOutQuad"></div></div>
-	<div class="row"><div class="name">easeOutCubic: </div><div class="box easeOutCubic"></div></div>
-	<div class="row"><div class="name">easeOutQuart: </div><div class="box easeOutQuart"></div></div>
-	<div class="row"><div class="name">easeOutQuint: </div><div class="box easeOutQuint"></div></div></div>
-	<div class="row"><div class="name">easeOutSine: </div><div class="box easeOutSine"></div></div>
-	<div class="row"><div class="name">easeOutExpo: </div><div class="box easeOutExpo"></div></div>
-	<div class="row"><div class="name">easeOutCirc: </div><div class="box easeOutCirc"></div></div>
-	<div class="row"><div class="name">easeOutBack: </div><div class="box easeOutBack"></div></div>
-	
-	<div class="row"><div class="name">easeInOutQuad: </div><div class="box easeInOutQuad"></div></div>
-	<div class="row"><div class="name">easeInOutCubic: </div><div class="box easeInOutCubic"></div></div>
-	<div class="row"><div class="name">easeInOutQuart: </div><div class="box easeInOutQuart"></div></div>
-	<div class="row"><div class="name">easeInOutQuint: </div><div class="box easeInOutQuint"></div></div>
-	<div class="row"><div class="name">easeInOutSine: </div><div class="box easeInOutSine"></div></div>
-	<div class="row"><div class="name">easeInOutExpo: </div><div class="box easeInOutExpo"></div></div>
-	<div class="row"><div class="name">easeInOutCirc: </div><div class="box easeInOutCirc"></div></div>
-	<div class="row"><div class="name">easeInOutBack: </div><div class="box easeInOutBack"></div></div>
 </section>
 </main>
-</div>
 <!-- l-footer START -->
 <!--include START-->
 <footer class="l-footer">
   <div class="l-pagetop"><a href=""><span>このページの先頭へ</span></a></div>
+  <div class="copyright-wrap">Copyright &copy; ○○○○○○○○○○○○. All rights reserved.</div>
 </footer>
 <!--include END-->
 
 <!-- l-footer END -->
 </div>
+</div>
 <!-- *** JavaScript *** -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js" type="text/javascript"></script>
 <script src="/js/script.js"></script>
 
+<noscript>
+<p class="no-js-text">当サイトをご覧になる際は、JavaScriptを有効にしてください。</p>
+</noscript>
 </body>
 
 </html>
