@@ -201,6 +201,16 @@ $point-pc02: 1280px;
 }
 
 
+// @include IEantialized;
+// IEにて、明朝以外のフォントに適用。
+@mixin IEantialized {
+    @media all and (-ms-high-contrast: none) {
+        transform: rotate(.03deg);
+        -webkit-transform: rotate(.03deg);
+    }
+}
+
+
 //@include inner-boxS;
 @mixin inner-boxS {
     @include pc01($point-pc01) {
