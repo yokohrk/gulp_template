@@ -234,6 +234,49 @@ $point-pc02: 1280px;
 }
 
 
+// @include placeholderWhite;
+@mixin placeholderWhite {
+    &:placeholder-shown {
+        color: rgba(255, 255, 255, .4);
+    }
+    &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, .4);
+    }
+    &:-moz-placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, .4);
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, .4);
+    }
+    &:-ms-input-placeholder {
+        color: rgba(255, 255, 255, .4);
+    }
+    &:focus {
+        &:placeholder-shown {
+            opacity: 1;
+            // color: $white;
+        }
+        &::-webkit-input-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+        &:-moz-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+        &::-moz-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+        &:-ms-input-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+    }
+}
+
 
 //easing
 
