@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+
+$main-color: #555;
+
+$point-sp: 480px;
+$point-tb: 481px;
+$point-pc: 768px;
+$point-pc01: 769px;
+$point-pc02: 1280px;
+
+@mixin sp($point-sp) {
+  @media screen and (max-width: $point-sp) {
+    @content;
+  }
+}
+
+@mixin tb($point-tb) {
+  @media print, screen and (min-width: $point-tb) and (max-width: $point-pc) {
+    @content;
+  }
+}
+
+@mixin pc01($point-pc01) {
+  @media screen and (min-width: $point-pc01) {
+    @content;
+  }
+}
+
+@mixin pc02($point-pc02) {
+  @media screen and (min-width: $point-pc02) {
+    @content;
+  }
+}
+
+
+//@include fontM;
+@mixin fontM {
+  @include sp($point-sp) {
+    font-size: 12px;
+  }
+  @include tb($point-tb) {
+    font-size: 14px;
+  }
+  @include pc01($point-pc01) {
+    font-size: 16px;
+  }
+}
+
+
+//@extend .clearfix;
+.clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// @include ov;
+@mixin ov {
+  @include pc01($point-pc01) {
+    opacity: 1;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+  }
+  &:hover {
+    @include pc01($point-pc01) {
+      opacity: 0.7;
+    }
+    img {
+      @include pc01($point-pc01) {
+        background-color: rgba(#fff, .01);
+      }
+    }
+  }
+}
+
+// @include ovImg;
+@mixin ovImg {
+  background: #fff;
+  opacity: 1;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+//@include kadomaru(6px);
+@mixin kadomaru($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+//@include font-googleEN;
+@mixin font-googleEN {
+  font-family: 'Playfair Display', serif;
+}
+
+//@include font-JP;
+@mixin font-JP {
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+}
+
+//@include PCsiteWidth;
+@mixin PCsiteWidth {
+  margin: 0 auto;
+  width: 1048px;
+  @include sp($point-sp) {
+    width: 100%;
+  }
+}
+
+//@include boxSizing;
+@mixin boxSizing {
+  box-sizing: border-box;
+}
+
+//SP ★
+//@include SPsiteWidth;
+@mixin SPsiteWidth {
+  @include boxSizing;
+  width: 100%;
+}
+
+//testAnimation
+// @mixin animTest {
+//   @media screen and (max-width: $point-sp) {
+//     @content;
+//   }
+// }
+@mixin nth-trans-delay($delay_items: 7, $delay_time: 0.2s){
+  @for $i from 1 through $delay_items {
+    &:nth-child(#{$i}) {
+     transition-delay: $delay_time * $i;
+    }
+  }
+}

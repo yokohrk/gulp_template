@@ -1,0 +1,42 @@
+{
+  "name": "gulpfile_template",
+  "version": "2.0.0",
+  "private": true,
+  "description": "This is a gulp template. Please edit this package.json in your project.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yokohrk/gulp_template.git"
+  },
+  "author": "Hiroyuki Yokoi <el.hiroyuki@gmail> (https://github.com/yokohrk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yokohrk/gulp_template/issues/",
+    "email": "project@hostname.com"
+  },
+  "homepage": "http://kando-teller.jp/",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-file-include": "^0.10.0",
+    "gulp-htmlhint": "^2.2.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sftp": "^0.1.5",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-upload": "^1.0.0",
+    "gulp-webserver": "^0.9.1",
+    "gulp.spritesmith": "^6.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "dependencies": {
+    "gulp-htmlmin": "^4.0.0"
+  }
+}
