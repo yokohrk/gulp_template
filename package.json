@@ -31,12 +31,12 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.5.1",
     "gulp-upload": "^1.0.0",
-    "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
+    "gulp-connect": "^5.7.0",
     "gulp-htmlmin": "^4.0.0"
   }
 }

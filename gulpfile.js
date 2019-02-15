@@ -4,7 +4,7 @@ pngquant = require('imagemin-pngquant');
 $ = require('gulp-load-plugins')();
 
 //
-//    gulp-webserver【1】LiveReload環境構築
+//    gulp-connect【1】Gulp plugin to run a webserver (with LiveReload)
 //    gulp-file-include【2】HTMLインクルード
 //    gulp-autoprefixer【3】autoprefixer追加
 //    gulp-cssmin【4】CSS圧縮
@@ -22,13 +22,14 @@ $ = require('gulp-load-plugins')();
 //    gulp-rename
 //    imagemin-pngquant png圧縮
 
-//gulp-webserver【1】LiveReload環境構築
-gulp.task('webserver', function () {
-  return gulp.src('./dist/').pipe($.webserver({
-    host: '0.0.0.0',
-    livereload: true,
-    open: 'http://localhost:8000/'
-  }));
+//gulp-connect【1】Gulp plugin to run a webserver (with LiveReload)
+var connect = require('gulp-connect');
+gulp.task('connect', done => {
+  connect.server({
+    root: 'dist',
+    livereload: true
+  });
+  done();
 });
 
 //gulp-file-include【2】HTMLインクルード
@@ -38,16 +39,18 @@ gulp.task('html', function () {
   })).pipe($.fileInclude({
     prefix: '@@',
     basepath: './src/template/_include/'
-  })).pipe(gulp.dest('./dist/'));
+  })).pipe(gulp.dest('./dist/'))
+  .pipe(connect.reload());;
 });
 
 //gulp-autoprefixer【3】autoprefixer追加
 var autoprefixer = require("gulp-autoprefixer");
-gulp.task("auto", function () {
+gulp.task("auto", done => {
   gulp.src("./src/css/**/*scss")
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(gulp.dest("./dist/css"));
+    done();
 });
 
 //gulp-cssmin【4】css圧縮
@@ -55,19 +58,20 @@ var gulp = require('gulp');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 
-gulp.task('cssmin', function () {
+gulp.task('cssmin', done => {
   gulp.src('./dist/**/*.css')
     .pipe(cssmin())
     .pipe(rename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('dist'));
+    done();
 });
 
 //gulp-uglify【5】JavaScript圧縮
 var uglify = require("gulp-uglify");
 
-gulp.task("js", function () {
+gulp.task("js", done => {
   gulp.src(["./src/js/**/*.js", "!./src/js/vendor/*.js"])
     .pipe(uglify())
     .pipe(gulp.dest("./dist/js"));
@@ -76,15 +80,17 @@ gulp.task("js", function () {
       preserveComments: 'license'
     }))
     .pipe(gulp.dest("./dist/js/vendor"));
+    done();
 });
 
 //gulp-imagemin【6】img圧縮
-gulp.task('image', function () {
+gulp.task('image', done => {
   return gulp.src('./src/img/**/*').pipe($.imagemin({
     progressive: true,
     interlaced: true,
     use: [pngquant()]
   })).pipe(gulp.dest('./dist/img/'));
+  done();
 });
 
 //gulp-htmlmin【7】HTML圧縮
@@ -105,12 +111,13 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('sass', function () {
+gulp.task('sass', done => {
   return gulp.src('./src/css/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/css/'));
+    done();
 });
 
 //gulp.spritesmith【9】sprite画像
@@ -139,15 +146,20 @@ gulp.task('sass', function () {
 //  gulp.run('sprite');
 //});
 
-gulp.task('watch', function () {
+gulp.task('watch', done => {
   gulp.watch('./src/template/**/*.html', gulp.task('html'));
   gulp.watch('./src/img/**/*', gulp.task('image'));
   gulp.watch('./src/css/**/*.scss', gulp.task('sass'));
   gulp.watch('./src/css/**/*.scss', gulp.task('auto'));
   gulp.watch(["./src/js/**/*.js", "!./dist/js/**/*.js"], gulp.task('js'));
+  done();
 });
 
-gulp.task('default', gulp.series( gulp.parallel('html', 'auto', 'image', 'webserver', 'js', 'watch')));
+gulp.task('default', gulp.series( gulp.parallel('html', 'auto', 'image', 'connect', 'js', 'watch')));
+// gulp.task('default', done => {
+//     gulp.series( gulp.parallel('html', 'auto', 'image', 'connect', 'js', 'watch'));
+//     done();
+// });
 
 
 //vinyl-ftp 【10】FTP upload
