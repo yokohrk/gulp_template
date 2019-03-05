@@ -22,7 +22,7 @@ $point-pc02: 1280px;
 }
 
 @mixin tb($point-tb) {
-  @media screen and (min-width: $point-tb) and (max-width: $point-pc) {
+  @media print, screen and (min-width: $point-tb) and (max-width: $point-pc) {
     @content;
   }
 }
