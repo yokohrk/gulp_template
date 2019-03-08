@@ -138,6 +138,58 @@ $point-pc02: 1280px;
 }
 
 
+
+//@include inner-boxS;
+@mixin inner-boxS {
+    margin: 0 auto;
+    @include sp($point-sp) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include tb($point-tb) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include pc01($point-pc01) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+//@include inner-boxM;
+@mixin inner-boxM {
+    margin: 0 auto;
+    @include sp($point-sp) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include tb($point-tb) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    @include pc01($point-pc01) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+//@include inner-boxL;
+@mixin inner-boxL {
+    margin: 0 auto;
+    @include sp($point-sp) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @include tb($point-tb) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @include pc01($point-pc01) {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+
+
+
 //@extend .clearfix;
 .clearfix {
   &:after {
