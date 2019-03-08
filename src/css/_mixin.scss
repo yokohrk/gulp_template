@@ -263,28 +263,6 @@ $point-pc02: 1280px;
 }
 
 
-//@include inner-boxS;
-@mixin inner-boxS {
-    @include pc01($point-pc01) {
-        max-width: 960px;
-        margin: 0 auto;
-    }
-}
-//@include inner-boxM;
-@mixin inner-boxM {
-    @include pc01($point-pc01) {
-        max-width: 1080px;
-        margin: 0 auto;
-    }
-}
-//@include inner-boxL;
-@mixin inner-boxL {
-    @include pc01($point-pc01) {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}
-
 
 // @include placeholderWhite;
 @mixin placeholderWhite {
