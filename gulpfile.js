@@ -97,6 +97,7 @@ gulp.task('image', function () {
     interlaced: true,
     use: [pngquant()]
   })).pipe(gulp.dest('./dist/img/'));
+  done();
 });
 
 //gulp-htmlmin【7】HTML圧縮
@@ -116,9 +117,9 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
   return gulp.src('./src/css/**/*.scss')
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/css/'));
 });
 
