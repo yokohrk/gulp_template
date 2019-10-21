@@ -187,6 +187,51 @@ $point-pc02: 1280px;
         padding-right: 150px;
     }
 }
+//@include outer-boxS;
+@mixin outer-boxS {
+    @include sp($point-sp) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    @include tb($point-tb) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    @include pc01($point-pc01) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+//@include outer-boxM;
+@mixin outer-boxM {
+    @include sp($point-sp) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    @include tb($point-tb) {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    @include pc01($point-pc01) {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+//@include outer-boxL;
+@mixin outer-boxL {
+    @include sp($point-sp) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    @include tb($point-tb) {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    @include pc01($point-pc01) {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}
 
 
 
