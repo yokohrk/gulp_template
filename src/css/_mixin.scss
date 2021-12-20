@@ -1,12 +1,5 @@
 @charset "utf-8";
 
-/*
-@include sp($point-sp) {}
-@include tb($point-tb) {}
-@include pc01($point-pc01) {}
-@include pc02($point-pc02) {}
-*/
-
 $main-color: #0000aa;
 
 $point-sp: 481px;
@@ -237,7 +230,7 @@ $point-pc02: 1280px;
 
 //@extend .clearfix;
 .clearfix {
-  &:after {
+  &::after {
     content: "";
     display: block;
     clear: both;
