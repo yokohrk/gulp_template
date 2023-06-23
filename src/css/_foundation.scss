@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+body {
+  @include txt-S;
+  color: $main-color;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html>body {
+  // min-width: 980px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+  border-style: none;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+a:hover {
+  @include pc01($point-pc01) {
+    text-decoration: none;
+  }
+}
+
+a:focus,
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  @include ov;
+}
+
+br.SPbr {
+  display: none;
+  @include sp($point-sp) {
+    display: inline;
+  }
+}
+
+br.PCbr {
+  display: inline;
+  @include sp($point-sp) {
+    display: none;
+  }
+}
+
+.SPview {
+  display: none !important;
+  @include sp($point-sp) {
+    display: block !important;
+  }
+}
+
+.PCview {
+  display: block !important;
+  @include sp($point-sp) {
+    display: none !important;
+  }
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+//  border: none;
+//  border-radius: 0;
+//  outline: none;
+//  -webkit-appearance: none;
+//  -moz-appearance: none;
+//  appearance: none;
+  font-weight: bold;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* iOSでのデフォルトスタイルをリセット */
+input,
+textarea {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+    &::-webkit-search-decoration {
+      display: none;
+    }
+    &:focus {
+      outline-offset: -2px;
+    }
+}
+
+.l-container {
+  width: 100%;
+  position: relative;
+  // height: 100%;
+  min-height: 100%;
+}

@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/*
+@include sp($point-sp)
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+/*
+@include sp($point-sp) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+body {
+  color: #0000aa;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  line-height: 1; }
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+      letter-spacing: 0.5px; } }
+  @media screen and (min-width: 769px) {
+    body {
+      font-size: 16px;
+      letter-spacing: 1.5px; } }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+ul {
+  list-style: none; }
+
+img {
+  width: 100%; }
+
+a {
+  color: #0000aa;
+  text-decoration: none;
+  outline: none;
+  -webkit-touch-callout: none; }
+
+@media screen and (min-width: 769px) {
+  a:hover {
+    text-decoration: underline; } }
+
+a:focus,
+*:focus {
+  outline: none; }
+
+img {
+  vertical-align: top;
+  border: none;
+  border-style: none; }
+
+body {
+  margin: 0; }
+
+@media screen and (min-width: 769px) {
+  a {
+    opacity: 1;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; } }
+
+@media screen and (min-width: 769px) {
+  a:hover {
+    opacity: 0.7; } }
+
+@media screen and (min-width: 769px) {
+  a:hover img {
+    background-color: rgba(255, 255, 255, 0.01); } }
+
+br.SPbr {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    br.SPbr {
+      display: inline; } }
+
+br.PCbr {
+  display: inline; }
+  @media screen and (max-width: 768px) {
+    br.PCbr {
+      display: none; } }
+
+.SPview {
+  display: none !important; }
+  @media screen and (max-width: 768px) {
+    .SPview {
+      display: block !important; } }
+
+.PCview {
+  display: block !important; }
+  @media screen and (max-width: 768px) {
+    .PCview {
+      display: none !important; } }
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-weight: bold;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  cursor: pointer; }
+
+select::-ms-expand {
+  display: none; }
+
+html,
+body {
+  height: 100%; }
+
+.l-container {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  min-height: 100%; }
+
+#contents {
+  /*フッターの高さと同じ*/ }
+
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/* ==========================================================================
+   Object
+   ========================================================================== */
+/* Component
+   ----------------------------------------------------------------- */
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+/* Project
+   ----------------------------------------------------------------- */
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+.row {
+  margin: 0 0 5px; }
+
+.name {
+  display: inline-block;
+  width: 10em; }
+
+.box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  margin: 0;
+  vertical-align: middle; }
+
+.linear {
+  animation: translate 2s cubic-bezier(0.250, 0.250, 0.750, 0.750) infinite; }
+
+.ease {
+  animation: translate 2s cubic-bezier(0.250, 0.100, 0.250, 1.000) infinite; }
+
+.ease-in {
+  animation: translate 2s cubic-bezier(0.420, 0.000, 1.000, 1.000) infinite; }
+
+.ease-in-out {
+  animation: translate 2s cubic-bezier(0.420, 0.000, 0.580, 1.000) infinite; }
+
+.easeInQuad {
+  animation: translate 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite; }
+
+.easeInCubic {
+  animation: translate 2s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite; }
+
+.easeInQuart {
+  animation: translate 2s cubic-bezier(0.895, 0.030, 0.685, 0.220) infinite; }
+
+.easeInQuint {
+  animation: translate 2s cubic-bezier(0.755, 0.050, 0.855, 0.060) infinite; }
+
+.easeInSine {
+  animation: translate 2s cubic-bezier(0.470, 0.000, 0.745, 0.715) infinite; }
+
+.easeInExpo {
+  animation: translate 2s cubic-bezier(0.950, 0.050, 0.795, 0.035) infinite; }
+
+.easeInCirc {
+  animation: translate 2s cubic-bezier(0.600, 0.040, 0.980, 0.335) infinite; }
+
+.easeInBack {
+  animation: translate 2s cubic-bezier(0.600, -0.280, 0.735, 0.045) infinite; }
+
+.easeOutQuad {
+  animation: translate 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite; }
+
+.easeOutCubic {
+  animation: translate 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite; }
+
+.easeOutQuart {
+  animation: translate 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite; }
+
+.easeOutQuint {
+  animation: translate 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) infinite; }
+
+.easeOutSine {
+  animation: translate 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite; }
+
+.easeOutExpo {
+  animation: translate 2s cubic-bezier(0.190, 1.000, 0.220, 1.000) infinite; }
+
+.easeOutCirc {
+  animation: translate 2s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite; }
+
+.easeOutBack {
+  animation: translate 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite; }
+
+.easeInOutQuad {
+  animation: translate 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite; }
+
+.easeInOutCubic {
+  animation: translate 2s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite; }
+
+.easeInOutQuart {
+  animation: translate 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite; }
+
+.easeInOutQuint {
+  animation: translate 2s cubic-bezier(0.860, 0.000, 0.070, 1.000) infinite; }
+
+.easeInOutSine {
+  animation: translate 2s cubic-bezier(0.445, 0.050, 0.550, 0.950) infinite; }
+
+.easeInOutExpo {
+  animation: translate 2s cubic-bezier(1.000, 0.000, 0.000, 1.000) infinite; }
+
+.easeInOutCirc {
+  animation: translate 2s cubic-bezier(0.785, 0.135, 0.150, 0.860) infinite; }
+
+.easeInOutBack {
+  animation: translate 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite; }
+
+@keyframes translate {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(300px); } }
+
+/*
+@include sp($point-sp) {}
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+
+/*# sourceMappingURL=style.map */

@@ -1,0 +1,454 @@
+@charset "utf-8";
+
+$main-color: #0000aa;
+
+$point-sp: 481px;
+$point-tb: 482px;
+$point-pc: 768px;
+$point-pc01: 769px;
+$point-pc02: 1280px;
+
+@mixin sp($point-sp) {
+  @media screen and (max-width: $point-sp) {
+    @content;
+  }
+}
+
+@mixin tb($point-tb) {
+  @media print, screen and (min-width: $point-tb) and (max-width: $point-pc) {
+    @content;
+  }
+}
+
+@mixin pc01($point-pc01) {
+  @media screen and (min-width: $point-pc01) {
+    @content;
+  }
+}
+
+@mixin pc02($point-pc02) {
+  @media screen and (min-width: $point-pc02) {
+    @content;
+  }
+}
+
+
+// @include txt-XXS;
+@mixin txt-XXS {
+    @include sp($point-sp) {
+        font-size: 8px;
+    }
+    @include tb($point-tb) {
+        font-size: 10px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 12px;
+    }
+}
+// @include txt-XS;
+@mixin txt-XS {
+    @include sp($point-sp) {
+        font-size: 10px;
+    }
+    @include tb($point-tb) {
+        font-size: 12px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 14px;
+    }
+}
+// @include txt-S;
+@mixin txt-S {
+    @include sp($point-sp) {
+        font-size: 12px;
+    }
+    @include tb($point-tb) {
+        font-size: 14px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 16px;
+    }
+}
+// @include txt-M3;
+@mixin txt-M3 {
+    @include sp($point-sp) {
+        font-size: 13px;
+    }
+    @include tb($point-tb) {
+        font-size: 15px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 18px;
+    }
+}
+// @include txt-M2;
+@mixin txt-M2 {
+    @include sp($point-sp) {
+        font-size: 14px;
+    }
+    @include tb($point-tb) {
+        font-size: 16px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 20px;
+    }
+}
+// @include txt-M;
+@mixin txt-M {
+    @include sp($point-sp) {
+        font-size: 16px;
+    }
+    @include tb($point-tb) {
+        font-size: 20px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 24px;
+    }
+}
+// @include txt-L;
+@mixin txt-L {
+    @include sp($point-sp) {
+        font-size: 18px;
+    }
+    @include tb($point-tb) {
+        font-size: 22px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 27px;
+    }
+}
+// @include txt-XL;
+@mixin txt-XL {
+    @include sp($point-sp) {
+        font-size: 24px;
+    }
+    @include tb($point-tb) {
+        font-size: 28px;
+    }
+    @include pc01($point-pc01) {
+        font-size: 32px;
+    }
+}
+
+
+
+//@include inner-boxS;
+@mixin inner-boxS {
+    margin: 0 auto;
+    @include sp($point-sp) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include tb($point-tb) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include pc01($point-pc01) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+//@include inner-boxM;
+@mixin inner-boxM {
+    margin: 0 auto;
+    @include sp($point-sp) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include tb($point-tb) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    @include pc01($point-pc01) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+//@include inner-boxL;
+@mixin inner-boxL {
+    margin: 0 auto;
+    @include sp($point-sp) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @include tb($point-tb) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @include pc01($point-pc01) {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+//@include outer-boxS;
+@mixin outer-boxS {
+    @include sp($point-sp) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    @include tb($point-tb) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    @include pc01($point-pc01) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+//@include outer-boxM;
+@mixin outer-boxM {
+    @include sp($point-sp) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    @include tb($point-tb) {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    @include pc01($point-pc01) {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+//@include outer-boxL;
+@mixin outer-boxL {
+    @include sp($point-sp) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    @include tb($point-tb) {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    @include pc01($point-pc01) {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}
+
+
+
+//@extend .clearfix;
+.clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+// @include ov;
+@mixin ov {
+  @include pc01($point-pc01) {
+    opacity: 1;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+  }
+  &:hover {
+    @include pc01($point-pc01) {
+      opacity: 0.7;
+    }
+    img {
+      @include pc01($point-pc01) {
+        background-color: rgba(#fff, .01);
+      }
+    }
+  }
+}
+
+// @include ovImg;
+@mixin ovImg {
+  background: #fff;
+  opacity: 1;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+
+//@include kadomaru(6px);
+@mixin kadomaru($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+
+//@include font-googleEN;
+@mixin font-googleEN {
+  font-family: 'Playfair Display', serif;
+}
+
+//@include font-JP;
+@mixin font-JP {
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+}
+
+
+// @include IEantialized;
+// IEにて、明朝以外のフォントに適用。
+@mixin IEantialized {
+    @media all and (-ms-high-contrast: none) {
+        transform: rotate(.03deg);
+        -webkit-transform: rotate(.03deg);
+    }
+}
+
+
+
+// @include placeholderWhite;
+@mixin placeholderWhite {
+    &:placeholder-shown {
+        color: rgba(255, 255, 255, .4);
+    }
+    &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, .4);
+    }
+    &:-moz-placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, .4);
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, .4);
+    }
+    &:-ms-input-placeholder {
+        color: rgba(255, 255, 255, .4);
+    }
+    &:focus {
+        &:placeholder-shown {
+            opacity: 1;
+            // color: $white;
+        }
+        &::-webkit-input-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+        &:-moz-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+        &::-moz-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+        &:-ms-input-placeholder {
+            opacity: 1;
+            // color: $white;
+        }
+    }
+}
+
+
+//easing
+
+// イージング値の取得
+@function returnEaseTypeToCubicBezier($type) {
+    $easingValue: "";
+
+    @if $type == "linear" {
+        $easingValue: "0.250, 0.250, 0.750, 0.750";
+    }
+    @else if $type ==  "ease" {
+        $easingValue: "0.250, 0.100, 0.250, 1.000";
+    }
+    @else if $type ==  "ease-in" {
+        $easingValue: "0.420, 0.000, 1.000, 1.000";
+    }
+    @else if $type ==  "ease-out" {
+        $easingValue: "0.000, 0.000, 0.580, 1.000";
+    }
+    @else if $type ==  "ease-in-out" {
+        $easingValue: "0.420, 0.000, 0.580, 1.000";
+    }
+
+    @else if $type ==  "easeInQuad" {
+        $easingValue: "0.550, 0.085, 0.680, 0.530";
+    }
+    @else if $type ==  "easeInCubic" {
+        $easingValue: "0.550, 0.055, 0.675, 0.190";
+    }
+    @else if $type ==  "easeInQuart" {
+        $easingValue: "0.895, 0.030, 0.685, 0.220";
+    }
+    @else if $type ==  "easeInQuint" {
+        $easingValue: "0.755, 0.050, 0.855, 0.060";
+    }
+    @else if $type ==  "easeInSine" {
+        $easingValue: "0.470, 0.000, 0.745, 0.715";
+    }
+    @else if $type ==  "easeInExpo" {
+        $easingValue: "0.950, 0.050, 0.795, 0.035";
+    }
+    @else if $type ==  "easeInCirc" {
+        $easingValue: "0.600, 0.040, 0.980, 0.335";
+    }
+    @else if $type ==  "easeInBack" {
+        $easingValue: "0.600, -0.280, 0.735, 0.045";
+    }
+
+
+    @else if $type ==  "easeOutQuad" {
+        $easingValue: "0.250, 0.460, 0.450, 0.940";
+    }
+    @else if $type ==  "easeOutCubic" {
+        $easingValue: "0.215, 0.610, 0.355, 1.000";
+    }
+    @else if $type ==  "easeOutQuart" {
+        $easingValue: "0.165, 0.840, 0.440, 1.000";
+    }
+    @else if $type ==  "easeOutQuint" {
+        $easingValue: "0.230, 1.000, 0.320, 1.000";
+    }
+    @else if $type ==  "easeOutSine" {
+        $easingValue: "0.390, 0.575, 0.565, 1.000";
+    }
+    @else if $type ==  "easeOutExpo" {
+        $easingValue: "0.190, 1.000, 0.220, 1.000";
+    }
+    @else if $type ==  "easeOutCirc" {
+        $easingValue: "0.075, 0.820, 0.165, 1.000";
+    }
+    @else if $type ==  "easeOutBack" {
+        $easingValue: "0.175, 0.885, 0.320, 1.275";
+    }
+
+
+    @else if $type ==  "easeInOutQuad" {
+        $easingValue: "0.455, 0.030, 0.515, 0.955";
+    }
+    @else if $type ==  "easeInOutCubic" {
+        $easingValue: "0.645, 0.045, 0.355, 1.000";
+    }
+    @else if $type ==  "easeInOutQuart" {
+        $easingValue: "0.770, 0.000, 0.175, 1.000";
+    }
+    @else if $type ==  "easeInOutQuint" {
+        $easingValue: "0.860, 0.000, 0.070, 1.000";
+    }
+    @else if $type ==  "easeInOutSine" {
+        $easingValue: "0.445, 0.050, 0.550, 0.950";
+    }
+    @else if $type ==  "easeInOutExpo" {
+        $easingValue: "1.000, 0.000, 0.000, 1.000";
+    }
+    @else if $type ==  "easeInOutCirc" {
+        $easingValue: "0.785, 0.135, 0.150, 0.860";
+    }
+    @else if $type ==  "easeInOutBack" {
+        $easingValue: "0.680, -0.550, 0.265, 1.550";
+    }
+
+    @return unquote($easingValue);
+}
+
+// cubic-bezierの呼び出し
+@function ease($type) {
+    @return unquote("cubic-bezier(#{returnEaseTypeToCubicBezier($type)})");
+}
