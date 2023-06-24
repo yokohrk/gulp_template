@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName></ShortName>
+  <Description></Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="48" height="48" type="image/x-icon"></Image>
+  <Url type="text/html" template=""/>
+  <Url type="application/x-suggestions+json" template=""/>
+  <Url type="application/x-moz-keywordsearch" template=""/>
+</OpenSearchDescription>
